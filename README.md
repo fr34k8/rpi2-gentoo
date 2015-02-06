@@ -13,7 +13,7 @@
 ```sh
 $ cd /your/prefered/location
 $ git clone https://github.com/aspann/rpi2-gentoo
-$ cd gentoo-buildchain
+$ cd rpi2-gentoo/gentoo-buildchain/
 $ ./mount_sd.sh /dev/sdX
 $ ./prepare_boot.sh
 $ ./prepare_filesystem.sh
