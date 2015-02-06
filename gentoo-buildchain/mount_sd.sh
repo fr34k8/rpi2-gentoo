@@ -4,8 +4,8 @@ if [[ $# < 1 ]]; then
 	echo -e "please specify devicenode for mounting (e.g. /dev/sdX)"
 	echo -e "partitiontable MUST be like this sheme:"
 	echo -e "/dev/sdX1 - boot (type 0x0c - vfat)"
-	echo -e "/dev/sdX2 - boot (type 0x83 - ext4)"
-        echo -e "/dev/sdX3 - boot (type 0x82 - swap)"
+	echo -e "/dev/sdX2 - root (type 0x83 - ext4)"
+        echo -e "/dev/sdX3 - swap (type 0x82 - swap)"
         echo -e "please try again, launching: '$0 /dev/sdX'"
 	exit 1
 elif [[ ${EUID} != 0 ]] ; then
