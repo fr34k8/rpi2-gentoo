@@ -30,7 +30,7 @@ cat ./mnt/gentoo/etc/portage/make.conf | egrep -v "CHOST|CFLAGS|#"\
 echo -e \
 'CFLAGS="-O2 -pipe -march=armv7a -mfpu=vfp -mfloat-abi=hard"
 CXXFLAGS="${CFLAGS}"
-CHOST="armv6a-hardfloat-linux-gnueabi"' > ./mnt/gentoo/etc/portage/make.conf
+CHOST="armv7a-hardfloat-linux-gnueabi"' > ./mnt/gentoo/etc/portage/make.conf
 cat ./mnt/gentoo/etc/portage/make.conf_new >> ./mnt/gentoo/etc/portage/make.conf
 rm ./mnt/gentoo/etc/portage/make.conf_new
 
