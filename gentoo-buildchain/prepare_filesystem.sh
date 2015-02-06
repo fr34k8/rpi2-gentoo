@@ -28,7 +28,7 @@ echo -e "patching make.conf..."
 cat ./mnt/gentoo/etc/portage/make.conf | egrep -v "CHOST|CFLAGS|#"\
 > ./mnt/gentoo/etc/portage/make.conf_new
 echo -e \
-'CFLAGS="-O2 -pipe -march=armv7a -mfpu=vfp -mfloat-abi=hard"
+'CFLAGS="-O2 -pipe -march=armv7-a -mfpu=vfp -mfloat-abi=hard"
 CXXFLAGS="${CFLAGS}"
 CHOST="armv7a-hardfloat-linux-gnueabi"' > ./mnt/gentoo/etc/portage/make.conf
 cat ./mnt/gentoo/etc/portage/make.conf_new >> ./mnt/gentoo/etc/portage/make.conf
