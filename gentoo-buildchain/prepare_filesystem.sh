@@ -9,7 +9,7 @@ tar -xjf ./mnt/stage3.tar.bz2 -C ./mnt/gentoo/
 rm ./mnt/stage3.tar.bz2
 
 if [[ ! -f "./mnt/portage.tar.bz2" ]]; then
-	echo -e "fetchin portage tree..."
+	echo -e "fetching portage tree..."
 	wget -qq -O ./mnt/portage.tar.bz2 \
 	http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
 fi
@@ -28,13 +28,14 @@ echo -e "patching make.conf..."
 cat ./mnt/gentoo/etc/portage/make.conf | egrep -v "CHOST|CFLAGS|#"\
 > ./mnt/gentoo/etc/portage/make.conf_new
 echo -e \
-'CFLAGS="-O2 -pipe -march=armv7a -mfpu=vfp -mfloat-abi=hard"
+'CFLAGS="-O2 -pipe -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=hard"
 CXXFLAGS="${CFLAGS}"
-CHOST="armv7a-hardfp-linux-gnueabi"' > ./mnt/gentoo/etc/portage/make.conf
+CHOST="armv7a-hardfloat-linux-gnueabi"' > ./mnt/gentoo/etc/portage/make.conf
 cat ./mnt/gentoo/etc/portage/make.conf_new >> ./mnt/gentoo/etc/portage/make.conf
 rm ./mnt/gentoo/etc/portage/make.conf_new
 
 echo -e "setting new root-password..."
+### if this does not work, do it manually
 sed -i "s/root:\*/root:$(openssl passwd -1)/g" ./mnt/gentoo/etc/shadow
 
 echo -e "done, ther rest must be configured manually.. :)\n\n"
