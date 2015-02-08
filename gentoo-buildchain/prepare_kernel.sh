@@ -6,7 +6,7 @@ if [[ ! -d "./mnt/gentoo/usr/src/linux/.git" ]]; then
 	$(cd ./mnt/gentoo/usr/src && git clone -b rpi-3.18.y git://github.com/raspberrypi/linux.git)
 	newInst=1
 else
-	$(cd ./mnt/gentoo/usr/src/linux && git pull)
+	$(cd ./mnt/gentoo/usr/src/linux && git pull >/dev/null 2>&1)
 fi
 echo -e "building kernel..."
 cd ./mnt/gentoo/usr/src/linux
