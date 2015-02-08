@@ -21,7 +21,7 @@ $ ./prepare_kernel.sh
 $ ./mount_sd.sh /dev/sdX -u
 ```
 
-#### (optional) Rebuilding your kerenl:
+#### (optional) Rebuilding/configuring your kernel:
 
 ```sh
 $ cd /your/prefered/location/rpi2-gentoo/gentoo-buildchain/
