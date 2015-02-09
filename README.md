@@ -3,9 +3,9 @@
 
 #### 1st Prepare your SD-Card, that it looks like:
 ```sh
-/dev/sdX1 - boot (type 0x0c - vfat) - holdts the kernel image and firmware
-/dev/sdX2 - root (type 0x83 - ext4) - root-filesystem (everything goes in here)
-/dev/sdX3 - swap (type 0x82 - swap) - swap - (i use 2GiB for this partition)
+/dev/sdX1 - boot (type 0x0c - vfat) - contains the kernel image and firmware
+/dev/sdX2 - root (type 0x83 - ext4) - root-filesystem (everything else goes in here)
+/dev/sdX3 - swap (type 0x82 - swap) - swap
 ```
 
 #### 2nd checkout and run the scripts as root (and read the output):
@@ -21,7 +21,7 @@ $ ./prepare_kernel.sh
 $ ./mount_sd.sh /dev/sdX -u
 ```
 
-#### (optional) Rebuilding/configuring your kernel:
+#### (optional) Rebuilding/configuring your kernel as root:
 
 ```sh
 $ cd /your/prefered/location/rpi2-gentoo/gentoo-buildchain/
