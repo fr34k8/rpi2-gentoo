@@ -3,7 +3,7 @@ oPath=$PWD
 newInst=0
 echo -e "getting kernel sources via git..."
 if [[ ! -d "./mnt/gentoo/usr/src/linux/.git" ]]; then
-	$(cd ./mnt/gentoo/usr/src && git clone -b rpi-3.18.y git://github.com/raspberrypi/linux.git)
+	$(cd ./mnt/gentoo/usr/src && git clone -b rpi-4.2.y git://github.com/raspberrypi/linux.git)
 	newInst=1
 else
 	$(cd ./mnt/gentoo/usr/src/linux && git pull >/dev/null 2>&1)
